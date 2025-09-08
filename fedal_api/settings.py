@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,10 @@ SECRET_KEY = 'django-insecure-!ncleltrl-^9knb_jb%)*f=e1v&a=bi46=#mgp=7!@j_8k1v($
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
-
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:81",
+    "http://localhost:81",
+]
 
 # Application definition
 
@@ -73,12 +77,15 @@ WSGI_APPLICATION = 'fedal_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRES_DB", "postgres"),
+        "USER": os.environ.get("POSTGRES_USER", "user"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", ""),
+        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
+        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
