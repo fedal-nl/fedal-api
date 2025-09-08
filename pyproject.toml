@@ -1,0 +1,24 @@
+[project]
+name = "fedal-api"
+version = "0.1.0"
+description = "An API for the Fedal applications"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.0",
+    "uvicorn[standard]",
+    "django-cors-headers>=4.7.0",
+    "django-extensions>=4.1",
+    "django-filter>=25.1",
+    "djangorestframework>=3.16.1",
+    "drf-yasg>=1.21.10",
+    "freezegun>=1.5.5",
+    "ruff>=0.12.8",
+    "sqlite-utils>=3.38",
+    "psycopg2-binary>=2.9.10",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "django-debug-toolbar",
+]

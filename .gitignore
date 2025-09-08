@@ -1,0 +1,64 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE files
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+*.sqlite
+
+# Static files
+staticfiles/
+media/
+static/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+
+# Nginx logs
+logs/
+access.log
+error.log
+nginx.pid
+
+# Uvicorn reload files
+*.reload
+*.pid
+*.sock
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ruff cache
+.ruff_cache/
+# SQLite utilities
+*.sqlite-utils/
+*.sqlite-utils-journal
+
+# Environment variables
+.env
+.env.*
