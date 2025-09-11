@@ -2,11 +2,20 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
+from dotenv import load_dotenv
 
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fedal_api.settings')
+
+    # Load .env file if it exists (local dev only)
+    BASE_DIR = Path(__file__).resolve().parent
+    env_file = BASE_DIR / ".env"
+    if env_file.exists():
+        load_dotenv(env_file, override=True)
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

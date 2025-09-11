@@ -16,6 +16,8 @@ dependencies = [
     "ruff>=0.12.8",
     "sqlite-utils>=3.38",
     "psycopg2-binary>=2.9.10",
+    "python-dotenv>=1.1.1",
+    "whitenoise>=6.10.0",
 ]
 
 [tool.uv]
